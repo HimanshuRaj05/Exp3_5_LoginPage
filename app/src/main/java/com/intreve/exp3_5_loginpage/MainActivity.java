@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RadioGroup;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     EditText etUserName, etPassword;
@@ -53,13 +54,32 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-//                String choice1="";
-//                String choice2="";
-//
-//                CheckBox cbPassword=findViewById(R.id.cbPassword);
-//                CheckBox cbUserName=findViewById(R.id.cbUserName);
-//
+                String choice1="";
+                String choice2="";
 
+                CheckBox cbPassword=findViewById(R.id.cbPassword);
+                CheckBox cbUserName=findViewById(R.id.cbUserName);
+
+
+                if(cbPassword.isChecked()){
+                    choice1="Password";
+
+                }
+
+                if(cbUserName.isChecked()){
+                    choice2="Username";
+                }
+
+                rememberChoice=choice1+", "+choice2;
+
+                if(rememberChoice==""){
+                    rememberChoice="None";
+                }
+
+
+                String toastString="User: "+userName+" created. \nPayment method: "+paymentChoice+"\nRemember choice: "+ rememberChoice;
+
+                Toast.makeText(MainActivity.this, toastString, Toast.LENGTH_SHORT).show();
 
 
 
