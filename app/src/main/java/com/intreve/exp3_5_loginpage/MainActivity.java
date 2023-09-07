@@ -70,12 +70,11 @@ public class MainActivity extends AppCompatActivity {
                     choice2="Username";
                 }
 
-                rememberChoice=choice1+", "+choice2;
+                rememberChoice=choice1+" "+choice2;
 
-                if(rememberChoice==""){
-                    rememberChoice="None";
-                }
-
+              if(choice1==""&& choice2==""){
+                  rememberChoice="None";
+              }
 
                 String toastString="User: "+userName+" created. \nPayment method: "+paymentChoice+"\nRemember choice: "+ rememberChoice;
 
